@@ -12,35 +12,9 @@ import Login from "./components/Login";
 import LoginState from "./context/login/loginState";
 import BlogState from "./context/blogs/blogState";
 import UserState from "./context/user/userState";
-import loginContextImport from './context/login/loginContext';
-import userContextImport from './context/user/userContext';
-import axios from "axios";
 
 
 const App = () => {
-
-  const loginContext = useContext(loginContextImport);
-  const navigate = useNavigate();
-  const userContext = useContext(userContextImport);
-
-  const handleLogOut = async (e)=>{
-    axios.get("https://triluxo-assignment-backend.vercel.app/api/auth/logout");
-    loginContext.setLoggedIn(false);
-    userContext.setUser({
-      name: "",
-      username: ""
-    })
-    navigate('/');
-    // window.location.reload(true);
-  }
-
-  function myFunction() {
-    handleLogOut();
-    // loginContext.setLoggedIn(false);
-    console.log("reloaded")
-  }
-  
-  window.onload = myFunction;
   
 
   return (
