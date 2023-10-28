@@ -1,0 +1,20 @@
+import loginContext from "./loginContext";
+import react, {useState, useContext, useEffect} from 'react';
+import axios from "axios";
+
+const LoginState = (props)=>{
+    const [loggedIn, setLoggedIn] = useState(false);
+    useEffect(()=>{
+        axios.get('http://localhost:5000/api/auth/checkLoggedIn').then((res)=>{
+            console.log(loggedIn);
+            setLoggedIn(res.data);
+        })
+    },[])
+    return(
+        <loginContext.Provider value={{loggedIn, setLoggedIn}}>
+            {props.children}
+        </loginContext.Provider>
+    )
+}
+
+export default LoginState;

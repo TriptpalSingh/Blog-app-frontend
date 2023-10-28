@@ -1,0 +1,41 @@
+.outer{
+    padding: 10px;
+    width: 50%;
+    background-color: white;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.image{
+    width: 100%;
+}
+
+.image img{
+    width: 100%;
+}
+
+.title{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;  
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+.author{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;  
+    font-size: 17px;
+}
+
+.content{
+    border-top: solid 2px rgba(0, 0, 0, 0.3);
+    padding-top: 20px;
+    font-family:serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+}
