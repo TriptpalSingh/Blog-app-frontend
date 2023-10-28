@@ -5,7 +5,7 @@ import axios from "axios";
 const LoginState = (props)=>{
     const [loggedIn, setLoggedIn] = useState(false);
     useEffect(()=>{
-        axios.get('http://localhost:5000/api/auth/checkLoggedIn').then((res)=>{
+        axios.get('https://triluxo-assignment-backend.vercel.app/api/auth/checkLoggedIn').then((res)=>{
             console.log(loggedIn);
             setLoggedIn(res.data);
         })

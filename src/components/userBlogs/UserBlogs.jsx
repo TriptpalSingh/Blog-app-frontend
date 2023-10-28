@@ -7,15 +7,18 @@ import axios from 'axios';
 import Blog from '../blog/Blog';
 import loginContextImport from '../../context/login/loginContext';
 import userContextImport from '../../context/user/userContext';
+import FryingPan from '../FryingPan';
 
 function UserBlogs() {
     const [blogs, setBlogs] = useState([]);
+    const [toggleFryingPan, setToggleFryingPan] = useState(true);
     const loginContext = useContext(loginContextImport);
     const userContext = useContext(userContextImport);
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/blogs/userBlogs").then((res) => {
+        axios.get("https://triluxo-assignment-backend.vercel.app/api/blogs/userBlogs").then((res) => {
+            setToggleFryingPan(false);
             // console.log(blogs)
             setBlogs(res.data);
             // console.log(blogs);
@@ -30,7 +33,7 @@ function UserBlogs() {
 
       const handleLogOut = async (e)=>{
         e.preventDefault();
-        axios.get("http://localhost:5000/api/auth/logout");
+        axios.get("https://triluxo-assignment-backend.vercel.app/api/auth/logout");
         loginContext.setLoggedIn(false);
         userContext.setUser({
           name: "",
@@ -134,6 +137,7 @@ function UserBlogs() {
             </div>
             {loginContext.loggedIn ? (
                 <div className='userBlogs__outer'>
+                    {toggleFryingPan ? <FryingPan/> : null}
                     {
                         blogs.map((blog) => <Blog title={blog.title} buttons={true} desc={blog.desc} date={blog.date} imgUrl={blog.imgUrl} id={blog._id}/>)
                     }

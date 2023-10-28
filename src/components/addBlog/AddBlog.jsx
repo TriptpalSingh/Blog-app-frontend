@@ -32,7 +32,7 @@ function AddBlog() {
         // })
 
         if(imgUrl == ""){
-            axios.post("http://localhost:5000/api/blogs/addBlog", {
+            axios.post("https://triluxo-assignment-backend.vercel.app/api/blogs/addBlog", {
                 title, desc, content
             }).then((res)=>{
                 navigate("/UserBlogs")
@@ -42,7 +42,7 @@ function AddBlog() {
             return;
         }
 
-        axios.post("http://localhost:5000/api/blogs/addBlog", {
+        axios.post("https://triluxo-assignment-backend.vercel.app/api/blogs/addBlog", {
             title, desc, imgUrl, content
         }).then((res)=>{
             // console.log(res.data);
@@ -54,7 +54,7 @@ function AddBlog() {
 
     const handleLogOut = async (e)=>{
         e.preventDefault();
-        axios.get("http://localhost:5000/api/auth/logout");
+        axios.get("https://triluxo-assignment-backend.vercel.app/api/auth/logout");
         loginContext.setLoggedIn(false);
         userContext.setUser({
           name: "",

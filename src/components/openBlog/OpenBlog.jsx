@@ -8,7 +8,7 @@ function OpenBlog() {
     const [blog, setBlog] = useState({});
 
     useEffect(()=>{
-        axios.put("http://localhost:5000/api/blogs/openBlog", {
+        axios.put("https://triluxo-assignment-backend.vercel.app/api/blogs/openBlog", {
             id:location.state.id
         }).then((res)=>{
             setBlog(res.data);

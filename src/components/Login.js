@@ -47,7 +47,7 @@ function Login() {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        axios.post("http://localhost:5000/api/auth/register", {
+        axios.post("https://triluxo-assignment-backend.vercel.app/api/auth/register", {
             name, username, email, password
         }).then((res)=>{
             setSignupToggle(false);
@@ -62,7 +62,7 @@ function Login() {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         // console.log({email, password});
-        axios.post("http://localhost:5000/api/auth/login", { email, password }).then((res) => {
+        axios.post("https://triluxo-assignment-backend.vercel.app/api/auth/login", { email, password }).then((res) => {
             loginContext.setLoggedIn(true);
             userContext.setUser({
                 name: res.data.user.name,
@@ -84,17 +84,7 @@ function Login() {
                             <div className="py-10">
                                 <h2 className="text-3xl font-bold text-[#fbc9cc] mb-2">Sign in to Account</h2>
                                 <div className="border-2 w-10 border-[#fbc9cc] inline-block mb-2"></div>
-                                {/* <div className="flex justify-center my-2">
-                                    <a href="#" className="border-2 border-gray-200 rounded-full p-3 mx-1">
-                                        <FaFacebookF className="text-sm" />
-                                    </a>
-                                    <a href="#" className="border-2 border-gray-200 rounded-full p-3 mx-1">
-                                        <FaLinkedinIn className="text-sm" />
-                                    </a>
-                                    <a href="#" className="border-2 border-gray-200 rounded-full p-3 mx-1">
-                                        <FaGoogle className="text-sm" />
-                                    </a>
-                                </div> */}
+                                
                                 <p className="text-gray-400 my-10">or use your email account</p>
                                 <div className="flex flex-col items-center ">
                                     <div className="bg-gray-100 w-64 p-2 flex items-center mb-3">

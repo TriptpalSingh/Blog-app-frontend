@@ -9,7 +9,7 @@ const UserState = (props)=>{
         username: ""
     })
     useEffect(()=>{
-        axios.get("http://localhost:5000/api/auth/getInfo").then((res)=>{
+        axios.get("https://triluxo-assignment-backend.vercel.app/api/auth/getInfo").then((res)=>{
             setUser({
                 name: res.data.name,
                 username: res.data.username

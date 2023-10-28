@@ -17,7 +17,7 @@ function UpdateBlog() {
     const id = location.state.id;
     // console.log(id);
     useEffect(()=>{
-        axios.put('http://localhost:5000/api/blogs/openBlog', {
+        axios.put('https://triluxo-assignment-backend.vercel.app/api/blogs/openBlog', {
             id
         }).then((res)=>{
             setPreValues(res.data);
@@ -67,7 +67,7 @@ function UpdateBlog() {
         const imgUrl = imgUrlRef.current.value;
         const content = contentRef.current.value;
 
-        axios.put("http://localhost:5000/api/blogs/updateBlog", {
+        axios.put("https://triluxo-assignment-backend.vercel.app/api/blogs/updateBlog", {
             id, title, desc, imgUrl, content
         }).then((res)=>{
             // console.log(res.data);

@@ -19,7 +19,7 @@ function Blog(props) {
 
   const handleDelete = (e)=>{
     e.preventDefault();
-    axios.put('http://localhost:5000/api/blogs/deleteBlog', {
+    axios.put('https://triluxo-assignment-backend.vercel.app/api/blogs/deleteBlog', {
       id:props.id
     }).then((res)=>{
       window.location.reload()
